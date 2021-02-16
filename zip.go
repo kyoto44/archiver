@@ -89,7 +89,7 @@ type Zip struct {
 
 // CheckExt ensures the file extension matches the format.
 func (*Zip) CheckExt(filename string) error {
-	if !strings.HasSuffix(filename, ".zip") {
+	if !strings.HasSuffix(filename, ".zip") && !strings.HasSuffix(filename, ".cdata") && !strings.HasSuffix(filename, ".zpk") {
 		return fmt.Errorf("filename must have a .zip extension")
 	}
 	return nil
